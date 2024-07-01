@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Matter';
+
+  src: url('/src/assests/matter-font/Matter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Matter';
+
+  src: url('/src/assests/matter-font/Matter-Bold.ttf') format('truetype');
+
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('/src/assests/matter-font/Matter-SemiBold.ttf') format('truetype');
+
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Matter';
+
+  src: url('/src/assests/matter-font/Matter-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+body{
+  font-family: 'Matter', sans-serif;
+}
