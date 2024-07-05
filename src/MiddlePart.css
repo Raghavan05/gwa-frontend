@@ -523,7 +523,7 @@ body{
 
 }
 
-@media only screen and (max-width: 540px) {
+@media (min-width : 300px ) and (max-width: 540px) {
     .overlay-image {
         width: 90vw;
         height: auto;
@@ -585,10 +585,10 @@ body{
 
 .reveal-card-2 {
     position:absolute;
-    width:260px;
+    width:245px;
 }
 .card-3{
-    width: 280px !important;
+    width: 250px !important;
     height: 230px;
 }
     /* .bar-image-alt{
