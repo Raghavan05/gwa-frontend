@@ -20,10 +20,10 @@ function Section() {
       <Whyus/>
       <MiddlePart />
       <Insights />
-      <TestimonialSlider/>
+      {/* <TestimonialSlider/> */}
       <MidPartTwo/>
-      <Footerr />
-      <Footer />
+      {/* <Footerr /> */}
+      {/* <Footer /> */}
 
 
     </div>

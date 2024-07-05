@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef,useState } from 'react';
 import './nestednavbar.css';
 import downarrowimage from '../Assets/down.gif';
 import Navbar from '../Navbar/Navbar';
@@ -41,7 +41,7 @@ const Nestednavbar = () => {
           }
         });
       },
-      { threshold: 0.5 } // Adjust the threshold as needed
+      { threshold: 0.1 } // Adjust the threshold as needed
     );
 
     observer.observe(videoPlayer);

@@ -1,19 +1,18 @@
 
-.dwon-arrow {
+.down-arrow {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
 }
 
-.dwon-arrow .image-arrow {
+.down-arrow .image-arrow {
     width: 100px;
     height: 100px;
 }
 
 .color-style {
     background-color: white;
-
     border-bottom: 1px solid #C3CFE0;
     height: 71px;
 }
@@ -408,64 +407,404 @@ padding: 14px 15px;
 
 
 .video-wrapper {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: 25px auto 115px auto;
+}
+
+.video-player {
+  transition: transform 1s ease, width 1s ease, height 1s ease;
+}
+
+.video-player.zoomed {
+  width: 100%;
+  transform: scale(1);
+}
+
+.video-player.zoomed-out {
+  width: 60%;
+  /* Adjust width as needed */
+  height: auto;
+  /* Adjust height as needed */
+  transform: scale(1);
+  /* Adjust initial scale */
+}
+
+.video {
+  width: 100%;
+  transition: transform 1s ease;
+}
+
+
+@media (max-width: 540px){
+
+  .video-wrapper {
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height:100vh;
-    margin: 55px auto;
-  }
-  
-  .video-player {
-    transition: transform 1s ease , width 1s ease, height 1s ease;
-  }
-  
-  .video-player.zoomed {
     width: 100%;
-    transform: scale(1);
+    height: auto;
+    margin: 0px auto;
   }
   
-  .video-player.zoomed-out {
-    width: 1118px;
-    height: 800px;
-    transform: scale(1);
+  .down-arrow {
+    height: 20vh;
+  }
+  .down-arrow .image-arrow {
+    width: 100px;
+    height: 100px;
   }
   
-  .video {
-    width: 100%;
-    transition: transform 1s ease;
+  } 
+
+  @media (max-width: 412px) {
+    .navbar-back {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      top: 71px;
+      padding: 16px 10px;
+      border: 0px 0px 1px 0px;
+      background: #F6F8FC;
+      border-bottom: 1px solid #C3CFE0;
+    }
+  
+    .navbar-back form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure items are spaced evenly */
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  
+    .navbar-back .form-control-one, 
+    .navbar-back .form-control-two {
+      border: 1px solid #C3CFE0;
+      background: #FFFFFF;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px; 
+      flex: 1; 
+
+      min-width: 0; /* Allow shrinking */
+    }
+  
+    .navbar-back .form-control-one {
+      flex: 2.2;
+    }
+  
+    .navbar-back .form-control-two {
+      flex: 1;
+    }
+  
+    .navbar-back .form-control-one label, 
+    .navbar-back .form-control-two label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #272848;
+      margin: 0;
+
+    }
+  
+    .navbar-back .form-control-one input, 
+    .navbar-back .form-control-two input {
+      background: none;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      width: 100%;
+      font-size: 12px;
+    }
+  
+    .navbar-back .form-control-two input {
+      color: #535353;
+ 
+      font-weight: 400;
+    }
+  
+    .navbar-back .button-color {
+      background: #0167FF;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 500;
+      width: 60px;
+      height: 42px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 02px 2px;
+      flex-shrink: 0; /* Prevent shrinking */
+      align-self: center; /* Center the button within the form */
+      flex: 1.5;
+    }
+  }
+  
+  
+  
+
+  @media (min-width: 413px) and (max-width: 600px) {
+    .navbar-back {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      top: 71px;
+      padding: 16px 10px;
+      border: 0px 0px 1px 0px;
+      background: #F6F8FC;
+      border-bottom: 1px solid #C3CFE0;
+    }
+  
+    .navbar-back form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure items are spaced evenly */
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  
+    .navbar-back .form-control-one, 
+    .navbar-back .form-control-two {
+      border: 1px solid #C3CFE0;
+      background: #FFFFFF;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px; 
+      flex: 1; 
+
+      min-width: 0; /* Allow shrinking */
+    }
+  
+    .navbar-back .form-control-one {
+      flex: 2.2;
+    }
+  
+    .navbar-back .form-control-two {
+      flex: 1.2;
+    }
+  
+    .navbar-back .form-control-one label, 
+    .navbar-back .form-control-two label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #272848;
+      margin: 0;
+
+    }
+  
+    .navbar-back .form-control-one input, 
+    .navbar-back .form-control-two input {
+      background: none;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      width: 100%;
+      font-size: 12px;
+    }
+  
+    .navbar-back .form-control-two input {
+      color: #535353;
+ 
+      font-weight: 400;
+    }
+  
+    .navbar-back .button-color {
+      background: #0167FF;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 500;
+      width: 60px;
+      height: 42px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px 4px;
+      flex-shrink: 0; /* Prevent shrinking */
+      align-self: center; /* Center the button within the form */
+      flex: 1.5;
+    }
+
   }
 
+  @media (min-width: 601px) and (max-width: 767px) {
+    .navbar-back {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      top: 71px;
+      padding: 16px 10px;
+      border: 0px 0px 1px 0px;
+      background: #F6F8FC;
+      border-bottom: 1px solid #C3CFE0;
+    }
+  
+    .navbar-back form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure items are spaced evenly */
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  
+    .navbar-back .form-control-one, 
+    .navbar-back .form-control-two {
+      border: 1px solid #C3CFE0;
+      background: #FFFFFF;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px; 
+      flex: 1; 
 
-.video-wrapper {
-    background-color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    height:auto;
-    /* margin: 10px auto; */
-    margin-bottom: 5px;
-  }
+      min-width: 0; /* Allow shrinking */
+    }
   
-  .video-player {
-    transition: transform 1s ease , width 1s ease, height 1s ease;
-  }
+    .navbar-back .form-control-one {
+      flex: 2.2;
+    }
   
-  .video-player.zoomed {
-    width: 100%;
-    transform: scale(1);
-  }
+    .navbar-back .form-control-two {
+      flex: 1.2;
+    }
   
-  .video-player.zoomed-out {
-    width: 1118px;
-    height: 800px;
-    transform: scale(1);
-  }
+    .navbar-back .form-control-one label, 
+    .navbar-back .form-control-two label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #272848;
+      margin: 0;
+
+    }
   
-  .video {
-    width: 100%;
-    transition: transform 1s ease;
-  }
+    .navbar-back .form-control-one input, 
+    .navbar-back .form-control-two input {
+      background: none;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      width: 100%;
+      font-size: 12px;
+    }
   
+    .navbar-back .form-control-two input {
+      color: #535353;
+ 
+      font-weight: 400;
+    }
+  
+    .navbar-back .button-color {
+      background: #0167FF;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 500;
+      width: 60px;
+      height: 42px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0px 6px;
+      flex-shrink: 0; /* Prevent shrinking */
+      align-self: center; /* Center the button within the form */
+      flex: 1;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 999px) {
+    .navbar-back {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      top: 71px;
+      padding: 16px 10px;
+      border: 0px 0px 1px 0px;
+      background: #F6F8FC;
+      border-bottom: 1px solid #C3CFE0;
+    }
+  
+    .navbar-back form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure items are spaced evenly */
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  
+    .navbar-back .form-control-one, 
+    .navbar-back .form-control-two {
+      border: 1px solid #C3CFE0;
+      background: #FFFFFF;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 7px 10px; 
+      flex: 1; 
+
+      min-width: 0; /* Allow shrinking */
+    }
+  
+    .navbar-back .form-control-one {
+      flex: 2.2;
+    }
+  
+    .navbar-back .form-control-two {
+      flex: 1.2;
+    }
+  
+    .navbar-back .form-control-one label, 
+    .navbar-back .form-control-two label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #272848;
+      margin: 0;
+
+    }
+  
+    .navbar-back .form-control-one input, 
+    .navbar-back .form-control-two input {
+      background: none;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      width: 100%;
+      font-size: 12px;
+    }
+  
+    .navbar-back .form-control-two input {
+      color: #535353;
+ 
+      font-weight: 400;
+    }
+  
+    .navbar-back .button-color {
+      background: #0167FF;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 500;
+      width: 60px;
+      height: 42px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0px 6px;
+      flex-shrink: 0; /* Prevent shrinking */
+      align-self: center; /* Center the button within the form */
+      flex: 1;
+    }
+  }

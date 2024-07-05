@@ -1,41 +1,26 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Matter';
+  src: url('./assests/matter-font/Matter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('./assests/matter-font/Matter-Medium.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('./assests/matter-font/Matter-Bold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('./assests/matter-font/Matter-SemiBold.ttf') format('truetype');
+  font-weight: 500;
 }
 body{
-  font-family: Matter, sans-serif;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-family: 'Matter', sans-serif !important;
 }
