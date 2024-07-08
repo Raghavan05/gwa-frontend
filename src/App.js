@@ -11,7 +11,7 @@ import FilterPage from './components/FilterPage/FilterPage';
 function App() {
   return (
    
-    <Router>
+    <Router basename='/gwa-Raghavan'>
       <Routes>
         <Route path="/" element={ <Section/>}/>
         <Route path="/filter" element={ <FilterPage/>}/>
