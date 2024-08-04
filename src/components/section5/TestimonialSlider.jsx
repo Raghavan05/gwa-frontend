@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './TestimonialSlider.css';
-import { RiDoubleQuotesL } from "react-icons/ri";
+// import { RiDoubleQuotesL } from "react-icons/ri";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 
@@ -54,7 +54,7 @@ const TestimonialSlider = () => {
       <div className='loremipsum'>LOREM IPSUM</div>
 
       <div className="title-testimonial">Our Patients Love Us</div>
-      <Slider {...settings}>
+      <Slider {...settings} >
         {testimonials.map((testimonial, index) => (
           <div key={index} className="testimonial">
             <div className="container testimonial-container">

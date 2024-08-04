@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import brand from '../Assets/brand-logo.png';
+import brand from '../Assets/logo.png';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import SignupCard from '../signup/signup';
-import LoginCard from '../login/login';
+import SignupCard from '../auth/signup';
+import LoginCard from '../auth/login'
 
 const Navbar = () => {
   const [isSignInClicked, setIsSignInClicked] = useState(false);
@@ -56,7 +56,7 @@ const Navbar = () => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light navbar-head-style">
-        <a className="navbar-brand" href="#"><img src={brand} alt="Brand Logo" height="36px" className='brand-img'/></a>
+        <img src={brand} alt="Brand Logo" height="36px" className='brand-img'/>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

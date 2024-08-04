@@ -10,6 +10,7 @@ import Nestednavbar from '../Nestednavbar/Nestednavbar'
 import Hero from '../Hero/Hero'
 import MidPartTwo from '../../MidPartTwo';
 import TestimonialSlider from '../section5/TestimonialSlider';
+import DiscoverVirtual from '../Midpart/DiscoverVirtual';
 // import Insights from '../section.6/Appp';
 
 function Section() {
@@ -19,11 +20,12 @@ function Section() {
       <Nestednavbar/>
       <Whyus/>
       <MiddlePart />
+      <DiscoverVirtual/>
       <Insights />
-      {/* <TestimonialSlider/> */}
+      <TestimonialSlider/>
       <MidPartTwo/>
-      {/* <Footerr /> */}
-      {/* <Footer /> */}
+      <Footerr />
+      <Footer />
 
 
     </div>

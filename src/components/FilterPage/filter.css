@@ -7,7 +7,7 @@
     border-radius: 15px;
     color: #272848;
     font-size: 14px;
-    margin: 150px 0 0 40px;
+    margin: 118px 25px 0 10px;
    
 }
   
@@ -95,6 +95,9 @@ input[type="date"]::-ms-expand {
     font-weight: 400;
     color: #272848;
 }
+.options{
+    padding: 40px !important;
+}
   
 .sidebar-filter .select-container-filter .form-group .arrow-icon-filter {
     position: absolute;
@@ -123,4 +126,41 @@ input[type="date"]::-ms-expand {
     color: #FF7F50;
     pointer-events: none;
     z-index:10; 
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sidebar-filter {
+        max-width: 250px;
+        height: 550px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar-filter {
+        max-width: 170px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-filter {
+        max-width: 150px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar-filter {
+        max-width: 120px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-filter {
+        max-width: 100px;
+        height: 350px;
+    }
 }

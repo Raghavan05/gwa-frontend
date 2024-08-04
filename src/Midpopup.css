@@ -1,0 +1,133 @@
+.custom-modal .modal-content {
+  border-radius: 10px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+}
+
+.custom-modal .modal-header {
+  background-color: #007bff;
+  height: 100px;
+  color: white;
+  border-bottom: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.custom-modal .modal-title {
+  font-weight: 700;
+  font-size: 30px;
+  width: 100%;
+}
+
+.btn-close-custom {
+  color: white;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
+
+.custom-modal .modal-body {
+  padding: 2rem;
+}
+
+.custom-modal .form-label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.custom-modal .form-control-custom {
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+
+.custom-modal .form-control-custom:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.custom-modal .btn-custom {
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.custom-modal .btn-custom:hover {
+  background-color: #0056b3;
+}
+
+.custom-modal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none !important;
+  padding: 1.5rem;
+}
+
+.sign-up-now {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.sign-up-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .custom-modal .modal-body {
+    padding: 1rem;
+  }
+
+  .custom-modal-footer {
+    padding: 1rem;
+  }
+
+  .btn-custom {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-modal .modal-content {
+    margin: 1rem;
+  }
+
+  .custom-modal .modal-header {
+    height: 80px;
+  }
+
+  .custom-modal .modal-title {
+    font-size: 24px;
+  }
+
+  .btn-close-custom {
+    font-size: 1.25rem;
+  }
+
+  .custom-modal .modal-body {
+    padding: 1rem;
+  }
+}
