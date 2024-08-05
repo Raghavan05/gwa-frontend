@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gwa-frontend/static/css/main.0157e9c5.css",
-    "main.js": "/gwa-frontend/static/js/main.062e2780.js",
+    "main.js": "/gwa-frontend/static/js/main.671c5dde.js",
     "static/css/879.d754b3bb.chunk.css": "/gwa-frontend/static/css/879.d754b3bb.chunk.css",
     "static/js/879.885e1f8e.chunk.js": "/gwa-frontend/static/js/879.885e1f8e.chunk.js",
     "static/css/612.74adcbea.chunk.css": "/gwa-frontend/static/css/612.74adcbea.chunk.css",
@@ -42,7 +42,7 @@
     "static/media/video_call.svg": "/gwa-frontend/static/media/video_call.36027d127f91507a7737c415a8556a44.svg",
     "static/media/ThumbsUp.svg": "/gwa-frontend/static/media/ThumbsUp.cb538760b41079e2856c4684ef3320be.svg",
     "main.0157e9c5.css.map": "/gwa-frontend/static/css/main.0157e9c5.css.map",
-    "main.062e2780.js.map": "/gwa-frontend/static/js/main.062e2780.js.map",
+    "main.671c5dde.js.map": "/gwa-frontend/static/js/main.671c5dde.js.map",
     "879.d754b3bb.chunk.css.map": "/gwa-frontend/static/css/879.d754b3bb.chunk.css.map",
     "879.885e1f8e.chunk.js.map": "/gwa-frontend/static/js/879.885e1f8e.chunk.js.map",
     "612.74adcbea.chunk.css.map": "/gwa-frontend/static/css/612.74adcbea.chunk.css.map",
@@ -51,6 +51,6 @@
   },
   "entrypoints": [
     "static/css/main.0157e9c5.css",
-    "static/js/main.062e2780.js"
+    "static/js/main.671c5dde.js"
   ]
 }
