@@ -21,20 +21,21 @@ export const fetchFromPatient = async (endpoint, data = {}, method = 'GET') => {
       let response;
       if (method === 'POST') {
           response = await api.post(`/patient${endpoint}`, data);
+          console.log(response)
       } else {
           // Convert the data object to query string for GET requests
           const queryString = new URLSearchParams(data).toString();
           response = await api.get(`/patient${endpoint}?${queryString}`);
       }
 
-      return response.data;
+      // return response.data;
 
-      // if (response.headers['content-type']?.includes('application/json')) {
-      //     return response.data;
-      // } else {
-      //     const responseText = await response.json();
-      //     throw new Error(`Received non-JSON response: ${responseText}`);
-      // }
+      if (response.headers['content-type']?.includes('application/json')) {
+          return response.data;
+      } else {
+          const responseText = await response.json();
+          throw new Error(`Received non-JSON response: ${responseText}`);
+      }
   } catch (error) {
       console.error('Fetch patient data error:', error.response ? error.response.data : error.message);
       throw error;

@@ -61,7 +61,7 @@ const LoginCard = ({ show, handleClose }) => {
               navigate('/Doctor/profile/Edit');
               break;
             case 'patient':
-              navigate('/Doctor/profile');
+              navigate('/filter');
               break;
             case 'admin':
               navigate('/admin/admin-home');
