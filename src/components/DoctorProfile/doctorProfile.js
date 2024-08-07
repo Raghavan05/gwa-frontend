@@ -18,6 +18,7 @@ import hanfheart from "../../assests/img/handheart.svg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { fetchFromDoctor } from "../../actions/api";
+import moment from "moment";
 
 const bufferToBase64 = (buffer) => {
   if (buffer.type === 'Buffer' && Array.isArray(buffer.data)) {
@@ -258,26 +259,18 @@ const handleTimeSlotClick = (slot) => {
 
 const handleBookAppointment = async () => {
   try {
+      const selectedDay = dates[selectedDate];
       const bookingData = {
           doctorId: doctorData._id,
-          date: new Date(dates[selectedDate].day).toISOString(), // Ensure ISO format
-          time: selectedTimeSlot,
+          date: moment(selectedDay.day).format('YYYY-MM-DD'),
+          startTime: selectedTimeSlot,
           consultationType: consultationType
       };
       console.log('Booking data:', bookingData);
 
-      // const response = await fetchFromPatient('/book', bookingData, 'POST');
-
-      // const contentType = response.headers.get('Content-Type');
-      // if (contentType && contentType.includes('application/json')) {
-      //     const result = await response.json();
-      //     console.log('Booking response:', result);
-      //     alert('Booking successful!');
-      // } else {
-      //     const responseText = await response.text();
-      //     console.error('Unexpected response format:', responseText);
-      //     alert('Unexpected response from server. Please try again.');
-      // }
+      // const result = await fetchFromPatient('/book', bookingData, 'POST');
+      // console.log('Booking response JSON:', result);
+      alert('Booking successful!');
   } catch (error) {
       console.error('Error booking appointment:', error.message);
       alert('Error booking appointment. Please try again.');

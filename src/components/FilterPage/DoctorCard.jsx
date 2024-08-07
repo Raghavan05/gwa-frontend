@@ -14,6 +14,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'; // Filled star
 // import api from 'axios';
 import { fetchFromPatient } from '../../actions/api.js';
 import { Link } from 'react-router-dom';
+import moment from 'moment/moment.js';
 
 const bufferToBase64 = (buffer) => {
     if (buffer.type === 'Buffer' && Array.isArray(buffer.data)) {
@@ -38,7 +39,7 @@ const DoctorCard = ({ isMapExpanded, doctor = {} }) => {
         if (doctor.profilePicture && doctor.profilePicture.data) {
             // console.log('Profile picture data type:', typeof doctor.profilePicture.data);
             // console.log('Profile picture data:', doctor.profilePicture.data);
-            const base64String = bufferToBase64(doctor.profilePicture);
+            const base64String = bufferToBase64(doctor.profilePicture.data);
             setProfilePicture(base64String);
         }
 
@@ -107,16 +108,21 @@ const DoctorCard = ({ isMapExpanded, doctor = {} }) => {
         try {
             const selectedDay = dates[selectedDate];
             console.log('Selected date:', selectedDay);
+            console.log(consultationType)
+            if(consultationType ==''){
+                alert('please select a consultation type')
+                return
+            }
             const bookingData = {
                 doctorId: doctor._id,
-                date: new Date(selectedDay.day).toISOString(),
+                date: moment(selectedDay.day).format('YYYY-MM-DD'),
                 startTime: selectedTimeSlot,
                 consultationType: consultationType
             };
             console.log('Booking data:', bookingData);
     
-            const result = await fetchFromPatient('/book', bookingData, 'POST');
-            console.log('Booking response JSON:', result);
+            // const result = await fetchFromPatient('/book', bookingData, 'POST');
+            // console.log('Booking response JSON:', result);
             alert('Booking successful!');
         } catch (error) {
             console.error('Error booking appointment:', error.message);
@@ -184,7 +190,7 @@ const DoctorCard = ({ isMapExpanded, doctor = {} }) => {
                     <div className="doctor-info">
                         <div>
                             <Link to={`/doctor/${doctor._id}`}>
-                                <img src={profilePicture } alt={doctor.name || "Doctor"} className="doctor-photo" />
+                                <img src={profilePicture} alt={doctor.name || "Doctor"} className="doctor-photo" />
                             </Link>
                             <div className={` ${isMapExpanded ? 'mapExpanded-sponsor-rating-stars' : 'd-none'}`}>
                                 {doctor.rating !== undefined ? renderStars(doctor.rating) : renderStars(0)}
