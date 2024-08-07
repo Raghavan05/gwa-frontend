@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.js'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FilterPage from './components/FilterPage/FilterPage';
 import Login from './components/FilterPage/login';
+import DoctorProfile from './components/DoctorProfile/doctorProfile';
 function App() {
   return (
    
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" element={ <Section/>}/>
         <Route path="/filter" element={ <FilterPage/>}/>
         <Route path="/login" element={ <Login/>}/>
+        <Route path="/doctor/:id" element={ <DoctorProfile/>}/>
       </Routes>
     </Router>
   );
