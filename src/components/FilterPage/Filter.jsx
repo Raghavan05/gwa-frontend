@@ -5,6 +5,19 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { RiArrowDownSLine } from "react-icons/ri";
 import { FiCalendar } from "react-icons/fi";
 
+const initialFilterState = {
+    state: '',
+    city: '',
+    dateAvailability: '',
+    speciality: '',
+    conditions: [],
+    languages: [],
+    gender: '',
+    hospital: '',
+    availability: '',
+    consultation: ''
+};
+
 const Filter = ({ onFilterChange, filters }) => {
     const [dropdownData, setDropdownData] = useState({
         countries: [],
@@ -58,7 +71,7 @@ const Filter = ({ onFilterChange, filters }) => {
     };
 
     const resetFilters = () => {
-        onFilterChange('reset', {});
+        onFilterChange('reset', initialFilterState);
     };
 
     return (
@@ -67,21 +80,6 @@ const Filter = ({ onFilterChange, filters }) => {
                 <h5>Filter</h5>
                 <button onClick={resetFilters}><i className="bi bi-arrow-counterclockwise" /> Reset Filter</button>
             </div>
-             {/* <div className="select-container-filter">
-          <div className="form-group">
-            <label htmlFor="what">What:</label>
-              <input type="text" id="what" name="what" value={filters.what} onChange={handleInputChange} placeholder="Search by name or speciality" />
-            <RiArrowDownSLine className="arrow-icon-filter" />
-          </div>
-        </div>
-
-        <div className="select-container-filter">
-          <div className="form-group">
-            <label htmlFor="where">Where:</label>
-            <input type="text" id="where" name="where" value={filters.where} onChange={handleInputChange} placeholder="Search by location" />
-            <RiArrowDownSLine className="arrow-icon-filter" />
-          </div>
-        </div> */}
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="state">State:</label>
@@ -94,7 +92,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="city">City:</label>
@@ -107,7 +104,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="dateAvailability">Date Availability:</label>
@@ -117,7 +113,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     </div>
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="speciality">Speciality:</label>
@@ -130,7 +125,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="conditions">Conditions:</label>
@@ -142,7 +136,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="languages">Language Spoken:</label>
@@ -154,7 +147,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="gender">Gender:</label>
@@ -167,7 +159,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="hospital">Hospital:</label>
@@ -180,7 +171,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="availability">Available Now:</label>
@@ -192,7 +182,6 @@ const Filter = ({ onFilterChange, filters }) => {
                     <RiArrowDownSLine className="arrow-icon-filter" />
                 </div>
             </div>
-
             <div className="select-container-filter">
                 <div className="form-group">
                     <label htmlFor="consultation">Consultation Type:</label>
@@ -210,3 +199,20 @@ const Filter = ({ onFilterChange, filters }) => {
 };
 
 export default Filter;
+
+
+ /* <div className="select-container-filter">
+          <div className="form-group">
+            <label htmlFor="what">What:</label>
+              <input type="text" id="what" name="what" value={filters.what} onChange={handleInputChange} placeholder="Search by name or speciality" />
+            <RiArrowDownSLine className="arrow-icon-filter" />
+          </div>
+        </div>
+
+        <div className="select-container-filter">
+          <div className="form-group">
+            <label htmlFor="where">Where:</label>
+            <input type="text" id="where" name="where" value={filters.where} onChange={handleInputChange} placeholder="Search by location" />
+            <RiArrowDownSLine className="arrow-icon-filter" />
+          </div>
+        </div> */

@@ -40,7 +40,7 @@ const LoginCard = ({ show, handleClose }) => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const res = await axios.post('http://localhost:5000/auth/login', { email, password });
+        const res = await axios.post('http://localhost:5000/auth/login', { email, password },{withCredentials :true});
         if (res.data.success) {
           const { user } = res.data;
           const { role, _id: userId, email: userEmail } = user;

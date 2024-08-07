@@ -133,6 +133,7 @@
     /* text-wrap: nowrap; */
   }
   .consultation-type {
+    cursor: pointer;
     font-size: 15px;
     padding-bottom: 8px;
     border-bottom: #e1dede dashed 1px;
@@ -351,11 +352,20 @@
 .result-card p{
   opacity: 0.6;
 }
-
+.doctor-details Link :hover{
+  text-decoration-line: none;
+}
 .container.expanded-map {
   max-width: 70%;
 }
 
+.consultationActiveColor{
+  cursor: pointer;
+  border-radius: 6px;
+  width: 80%;
+  background-color: #37adff;
+  color: #fff;
+}
 /* .doctor-card-container {
   background-color: #ffffff;
   padding: 20px;

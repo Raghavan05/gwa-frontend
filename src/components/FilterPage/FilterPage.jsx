@@ -36,7 +36,7 @@ const FilterPage = () => {
     const fetchDoctors = async () => {
       try {
         const response = await fetchFromPatient(`/doctors`);
-        console.log('API response:', response);
+        // console.log('API response:', response);
         setDoctors(response.doctors);
       } catch (error) {
         console.error('Error fetching doctors:', error);
@@ -62,28 +62,37 @@ const FilterPage = () => {
     setFilters((prevFilters) => ({ ...prevFilters, what: searchInput }));
   };
 
+  // const handleFilterChange = (filterName, filterValue) => {
+  //   setFilters((prevFilters) => ({ ...prevFilters, [filterName]: filterValue }));
+  // };
+  const initialFilterState = {
+    state: '',
+    city: '',
+    dateAvailability: '',
+    speciality: '',
+    conditions: [],
+    languages: [],
+    gender: '',
+    hospital: '',
+    availability: '',
+    consultation: ''
+};
+
   const handleFilterChange = (filterName, filterValue) => {
-    setFilters((prevFilters) => ({ ...prevFilters, [filterName]: filterValue }));
-  };
+    if (filterName === 'reset') {
+        setFilters(initialFilterState);
+    } else {
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [filterName]: filterValue
+        }));
+    }
+  }
+    
 
   const handleResetClick = () => {
     setIsMapExpanded(false);
     setSearchInput('');
-    setFilters({
-      what: '',
-      where: '',
-      country: '',
-      state: '',
-      city: '',
-      speciality: '',
-      conditions: [],
-      languages: [],
-      gender: '',
-      hospital: '',
-      availability: '',
-      dateAvailability: '',
-      consultation: ''
-    });
   };
 
   const filterDoctors = (doctors) => {
