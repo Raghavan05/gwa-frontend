@@ -9,6 +9,8 @@ import { RiArrowDownSLine } from "react-icons/ri";
 const DoctorMainCard = ({ isMapExpanded, doctors = [] }) => {
     const [sortOption, setSortOption] = useState('');
     const [sortedDoctors, setSortedDoctors] = useState([]);
+    const [sponsoredDoctors, setSponsoredDoctors] = useState([]);
+    const [nonSponsoredDoctors, setNonSponsoredDoctors] = useState([]);
 
     const handleSortChange = (e) => {
         setSortOption(e.target.value);
@@ -26,16 +28,22 @@ const DoctorMainCard = ({ isMapExpanded, doctors = [] }) => {
     };
 
     useEffect(() => {
-        setSortedDoctors(sortDoctors(doctors));
-    }, [sortOption, doctors]);
+        const sorted = sortDoctors(doctors);
+        setSortedDoctors(sorted);
 
-    const doctorCount = sortedDoctors.length;
+        // Filter doctors into sponsored and non-sponsored
+        const sponsored = sorted.filter(doctor => doctor.subscriptionType === 'Premium' || doctor.subscriptionType === 'Enterprise');
+        const nonSponsored = sorted.filter(doctor => doctor.subscriptionType === 'Free');
+        
+        setSponsoredDoctors(sponsored);
+        setNonSponsoredDoctors(nonSponsored);
+    }, [sortOption, doctors]);
 
     return (
         <div className="container p-0">
             <div className="row doctor-main-card">
                 <div className={`col-7 ${isMapExpanded ? 'mapExpanded-doc-card-header' : 'doc-card-header'}`}>
-                    <h4>{doctorCount} doctor{doctorCount !== 1 ? 's' : ''} available</h4>
+                    <h4>{sortedDoctors.length} doctor{sortedDoctors.length !== 1 ? 's' : ''} available</h4>
                     <div className='d-flex'>
                         <img src={VerifiedImg} alt="Verified" style={{ width: "26px", height: "26px" }} />
                         <p>Book appointments with minimum wait-time & verified doctor details</p>
@@ -60,17 +68,24 @@ const DoctorMainCard = ({ isMapExpanded, doctors = [] }) => {
                     </div>
                 </div>
                 <div>
-                    {doctorCount > 0 ? (
-                        sortedDoctors.map((doctor) => (
+                    {sponsoredDoctors.length > 0 ? (
+                        sponsoredDoctors.map((doctor) => (
                             <DoctorCard key={doctor._id} doctor={doctor} isMapExpanded={isMapExpanded} />
                         ))
                     ) : (
-                        <p>No doctors found based on the applied filters.</p>
+                        <p>No sponsored doctors found based on the applied filters.</p>
                     )}
                 </div>
             </div>
             <div className={`doctor-card-container result-card ${isMapExpanded ? 'expanded' : ''}`}>
                 <p>All results</p>
+                {nonSponsoredDoctors.length > 0 ? (
+                    nonSponsoredDoctors.map((doctor) => (
+                        <DoctorCard key={doctor._id} doctor={doctor} isMapExpanded={isMapExpanded} />
+                    ))
+                ) : (
+                    <p>No doctors found based on the applied filters.</p>
+                )}
                 <Sponsor isMapExpanded={isMapExpanded} />
             </div>
         </div>

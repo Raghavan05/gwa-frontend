@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FilterPage from './components/FilterPage/FilterPage';
 import Login from './components/FilterPage/login';
 import DoctorProfile from './components/DoctorProfile/doctorProfile';
+import GetData from './components/login/GetData'
 function App() {
   return (
    
@@ -19,6 +20,7 @@ function App() {
         <Route path="/filter" element={ <FilterPage/>}/>
         <Route path="/login" element={ <Login/>}/>
         <Route path="/doctor/:id" element={ <DoctorProfile/>}/>
+        <Route path="/userProfile" element={ <GetData/>}/>
       </Routes>
     </Router>
   );
