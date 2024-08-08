@@ -46,7 +46,7 @@ function DoctorProfile() {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const [showDoctorCard, setShowDoctorCard] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
-  const [consultationType, setConsultationType] = useState('In-Person');
+  const [consultationType, setConsultationType] = useState('inPerson');
 
   const [selectedPlace, setSelectedPlace] = useState("");
   const handleInsuranceChange = (event) => {
@@ -277,6 +277,10 @@ const handleBookAppointment = async () => {
   }
 };
 
+const handleConsultationTypeChange = (type) => {
+  setConsultationType(type);
+};
+
   return (
     <div className="doctor-profile">
       <div className="share-box">
@@ -288,20 +292,23 @@ const handleBookAppointment = async () => {
           className="Appointment-container"
           style={{ height: appointmentContainerHeight }}
         >
-          <p className="book-appointment">Book an Appointment</p>
-          <div className="Appointment-container-box">
-            <div className="book-appointment-inperson">
-              <div className="book-appointment-inperson-icon"></div>
-              {/* <p className="book-appointment-inperson-container">In-Person</p> */}
-              <span onClick={() => setConsultationType('inPerson')}>{doctorData.consultationType?.inPerson || "In-Person"}</span>
+            <div className="book-appointment">Book Appointment</div>
+            <div className="Appointment-container-box">
+              <div 
+                className={`book-appointment-inperson ${consultationType !== 'inPerson' ? 'inactive' : ''}`}
+                onClick={() => handleConsultationTypeChange('inPerson')}
+              >
+                <div className="book-appointment-inperson-icon"></div>
+                <div className="book-appointment-inperson-container">In-person</div>
+              </div>
+              <div 
+                className={`video-consultation-container ${consultationType === 'video' ? 'active' : ''}`}
+                onClick={() => handleConsultationTypeChange('video')}
+              >
+                <div className="video-consultation-container-icon"></div>
+                <div className="video-consultation-text">Video Consultation</div>
+              </div>
             </div>
-
-            <div className="video-consultation-container">
-              <div className="video-consultation-container-icon"></div>
-              {/* <p className="video-consultation-text">Video Consultation</p> */}
-              <span onClick={() => setConsultationType('video')}>{doctorData.consultationType?.video || "Video Consultation"}</span>
-            </div>
-          </div>
           <div className="Appointment-select-place">Select Place</div>
           <div className="Appointment-select-place-dropdown">
             <select

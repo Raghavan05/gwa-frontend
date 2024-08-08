@@ -19,6 +19,47 @@ display: flex;
     flex: 1;
   }
    */
+
+   .book-appointment-inperson,
+.video-consultation-container {
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.book-appointment-inperson {
+  background: #0167FF;
+  color: #FFFFFF;
+}
+
+.book-appointment-inperson.inactive {
+  background: #FFFFFF;
+  color: #0167FF;
+  border: 1px solid #0167FF;
+}
+
+.video-consultation-container {
+  background: #FFFFFF;
+  color: #0167FF;
+  border: 1px solid #0167FF;
+}
+
+.video-consultation-container.active {
+  background: #0167FF;
+  color: #FFFFFF;
+}
+
+.book-appointment-inperson-icon,
+.video-consultation-container-icon {
+  transition: filter 0.3s;
+}
+
+.book-appointment-inperson.inactive .book-appointment-inperson-icon {
+  filter: invert(23%) sepia(91%) saturate(1964%) hue-rotate(201deg) brightness(96%) contrast(101%);
+}
+
+.video-consultation-container.active .video-consultation-container-icon {
+  filter: brightness(0) invert(1);
+}
 .doctor-profile-img{
     width: 311px;
 height: 341px;
